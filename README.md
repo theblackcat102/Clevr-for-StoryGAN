@@ -5,6 +5,14 @@ This is the code for StoryGAN adapted from [CLEVR dataset](http://cs.stanford.ed
 ## Step 1: Generating Images
 First we render synthetic images using [Blender](https://www.blender.org/), outputting both rendered images as well as a JSON file containing ground-truth scene information for each image.
 
+```
+wget https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.78/blender-2.78b-linux-glibc219-x86_64.tar.bz2
+bzip2 -d blender-2.78b-linux-glibc219-x86_64.tar.bz2
+tar xopf blender-2.78b-linux-glibc219-x86_64.tar
+export BLENDER_PATH="$PWD/blender-2.78b-linux-glibc219-x86_64"
+export PATH=$BLENDER_PATH:$PATH
+```
+
 Blender ships with its own installation of Python which is used to execute scripts that interact with Blender; you'll need to add the `image_generation` directory to Python path of Blender's bundled Python. The easiest way to do this is by adding a `.pth` file to the `site-packages` directory of Blender's Python, like this:
 
 ```bash
